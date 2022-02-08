@@ -18,6 +18,8 @@
 
         <spring-boot.version>2.6.3</spring-boot.version>
         <tomcat.plugin.version>2.2</tomcat.plugin.version>
+
+        <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
     </properties>
 
     <modules>
@@ -44,6 +46,12 @@
                     <groupId>org.apache.tomcat.maven</groupId>
                     <artifactId>tomcat7-maven-plugin</artifactId>
                     <version>${tomcat.plugin.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${maven-war-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
