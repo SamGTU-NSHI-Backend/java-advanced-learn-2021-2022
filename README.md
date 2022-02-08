@@ -15,12 +15,13 @@
 - если решение верное подтверждаем реквест;
 - если есть правки, ошибки описываем вам их в комментариях к реквесту.
 
-
 ## Список лекций
 
 1. [Maven](lessons/maven.md)
-2. [Сервлеты и логирование](servlets)
-3. [Spring beans](spring-beans)
+2. [Streams](streams-learn)
+3. [Hibernate](hibernate-learn)
+4. [Сервлеты и логирование](servlets)
+5. [Spring beans](spring-beans)
 
 ## Список работ
 
