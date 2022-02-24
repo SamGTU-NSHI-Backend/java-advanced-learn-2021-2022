@@ -27,7 +27,7 @@ public class PersonControllerImpl implements PersonController {
 
     @Override
     public ResponseEntity<Person> findById(String id, String firstName) {
-        if(id.matches("\\d+")) {
+        if (id.matches("\\d+")) {
             Person person = new Person(id, firstName, "SecondName", "MiddleName", 123);
             return ResponseEntity.ok(person);
         } else {
