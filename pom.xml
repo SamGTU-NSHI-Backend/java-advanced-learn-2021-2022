@@ -17,8 +17,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
-        <tomcat.plugin.version>2.2</tomcat.plugin.version>
+        <orika.version>1.4.6</orika.version>
 
+        <tomcat.plugin.version>2.2</tomcat.plugin.version>
         <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
     </properties>
 
@@ -37,6 +38,11 @@
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
+            <dependency>
+                <groupId>ma.glasnost.orika</groupId>
+                <artifactId>orika-core</artifactId>
+                <version>${orika.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -48,11 +54,15 @@
                     <artifactId>tomcat7-maven-plugin</artifactId>
                     <version>${tomcat.plugin.version}</version>
                 </plugin>
-
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>${maven-war-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
