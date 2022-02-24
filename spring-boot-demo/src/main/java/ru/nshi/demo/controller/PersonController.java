@@ -2,6 +2,7 @@ package ru.nshi.demo.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ru.nshi.demo.model.domain.Person;
 import ru.nshi.demo.model.dto.CreatePersonDto;
 
 /**
@@ -15,6 +16,6 @@ public interface PersonController {
     ResponseEntity<String> createPerson(@RequestBody(required = false) CreatePersonDto dto);
 
     @GetMapping("/{id}")
-    ResponseEntity<String> findById(@PathVariable(required = false) String id,
+    ResponseEntity<Person> findById(@PathVariable(required = false) String id,
                                     @RequestParam(defaultValue = "FirstName") String firstName);
 }
