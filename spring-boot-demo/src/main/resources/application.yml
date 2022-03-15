@@ -1,0 +1,10 @@
+server:
+  port: ${server_port:8080}
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: person_service
+orika:
+  mapNulls: true
+  name: mainOrika
