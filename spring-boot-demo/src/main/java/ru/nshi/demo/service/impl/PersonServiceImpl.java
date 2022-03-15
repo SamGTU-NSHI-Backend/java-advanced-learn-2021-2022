@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import ma.glasnost.orika.BoundMapperFacade;
 import ma.glasnost.orika.MapperFactory;
 import org.springframework.stereotype.Service;
+import ru.nshi.demo.mapper.PersonMapper;
 import ru.nshi.demo.model.domain.Person;
 import ru.nshi.demo.model.dto.CreatePersonDto;
 import ru.nshi.demo.service.PersonService;
@@ -16,12 +17,12 @@ import ru.nshi.demo.service.PersonService;
 @Slf4j
 @Service
 public class PersonServiceImpl implements PersonService {
-    private final MapperFactory mapperFactory;
+
+    private final PersonMapper personMapper;
 
     @Override
     public String createPerson(CreatePersonDto dto) {
-        BoundMapperFacade<CreatePersonDto, Person> facade = mapperFactory.getMapperFacade(CreatePersonDto.class, Person.class);
-        Person person = facade.map(dto);
+        Person person = personMapper.map(dto);
         log.info("Object: {}", person);
         return "Mapped and Created";
     }
