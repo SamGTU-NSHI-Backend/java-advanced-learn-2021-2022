@@ -1,5 +1,10 @@
 package ru.nshi.demo.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.nshi.demo.model.domain.Person;
@@ -13,6 +18,12 @@ public interface PersonController {
     String MAPPING = "/persons";
 
     @PostMapping("/create")
+    @Operation(description = "Request for creating new person.")
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Request is ok.",
+        content = { @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)}),
+        @ApiResponse(responseCode = "400", description = "If in fio does not contains 3 elements")
+    })
     ResponseEntity<String> createPerson(@RequestBody(required = false) CreatePersonDto dto);
 
     @GetMapping("/{id}")
