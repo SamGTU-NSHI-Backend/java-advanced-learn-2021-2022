@@ -5,6 +5,7 @@ import ma.glasnost.orika.CustomMapper;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.MappingContext;
 import org.springframework.stereotype.Component;
+import ru.nshi.demo.mapper.converter.StringToLocalDateConverter;
 import ru.nshi.demo.model.domain.Person;
 import ru.nshi.demo.model.dto.CreatePersonDto;
 
@@ -28,6 +29,9 @@ public class PersonMapper extends OrikaMapper {
                     target.setMiddleName(values[2]);
                 }
             })
+            .fieldMap("birthDate", "personBirthDate")
+                .converter(StringToLocalDateConverter.CONVERTER_CODE)
+                .add()
             .byDefault()
             .register();
     }

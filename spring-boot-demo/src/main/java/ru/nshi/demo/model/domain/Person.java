@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import java.time.LocalDate;
+
 /**
  * @author rassafel
  */
@@ -16,4 +18,5 @@ public class Person {
     private String lastName;
     private String middleName;
     private Integer age;
+    private LocalDate personBirthDate;
 }

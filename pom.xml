@@ -21,6 +21,7 @@
 
         <tomcat.plugin.version>2.2</tomcat.plugin.version>
         <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
+        <openapi.version>1.6.4</openapi.version>
     </properties>
 
     <modules>
@@ -31,6 +32,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${openapi.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>

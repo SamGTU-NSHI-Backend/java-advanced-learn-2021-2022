@@ -9,6 +9,8 @@ import ru.nshi.demo.model.domain.Person;
 import ru.nshi.demo.model.dto.CreatePersonDto;
 import ru.nshi.demo.service.PersonService;
 
+import java.time.LocalDate;
+
 /**
  * @author rassafel
  */
@@ -28,7 +30,7 @@ public class PersonControllerImpl implements PersonController {
     @Override
     public ResponseEntity<Person> findById(String id, String firstName) {
         if (id.matches("\\d+")) {
-            Person person = new Person(id, firstName, "SecondName", "MiddleName", 123);
+            Person person = new Person(id, firstName, "SecondName", "MiddleName", 123, LocalDate.now());
             return ResponseEntity.ok(person);
         } else {
             return ResponseEntity.badRequest().body(null);

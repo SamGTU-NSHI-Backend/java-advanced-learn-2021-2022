@@ -14,4 +14,5 @@ public class CreatePersonDto {
     private String id;
     private String fio;
     private Integer rawAge;
+    private String birthDate;
 }
