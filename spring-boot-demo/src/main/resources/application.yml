@@ -5,6 +5,12 @@ server:
 spring:
   application:
     name: person_service
+  datasource:
+    url: jdbc:h2:mem:personsDb
+    username: testUser
+    password: testUser
+    driverClassName: org.h2.Driver
+
 orika:
   mapNulls: true
   name: mainOrika
