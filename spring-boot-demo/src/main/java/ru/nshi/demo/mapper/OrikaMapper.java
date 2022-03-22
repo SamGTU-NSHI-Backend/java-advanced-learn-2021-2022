@@ -16,7 +16,7 @@ public abstract class OrikaMapper {
     public abstract void configure(MapperFactory mapperFactory);
 
     @PostConstruct
-    protected void init(){
+    protected void init() {
         configure(mapperFactory);
     }
 

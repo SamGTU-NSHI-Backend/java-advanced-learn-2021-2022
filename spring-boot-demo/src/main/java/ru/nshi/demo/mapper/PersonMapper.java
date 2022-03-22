@@ -30,13 +30,13 @@ public class PersonMapper extends OrikaMapper {
                 }
             })
             .fieldMap("birthDate", "personBirthDate")
-                .converter(StringToLocalDateConverter.CONVERTER_CODE)
-                .add()
+            .converter(StringToLocalDateConverter.CONVERTER_CODE)
+            .add()
             .byDefault()
             .register();
     }
 
-    public Person map(CreatePersonDto from){
+    public Person map(CreatePersonDto from) {
         return mapperFactory.getMapperFacade(CreatePersonDto.class, Person.class)
             .map(from);
     }
