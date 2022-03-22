@@ -1,6 +1,6 @@
 package ru.nshi.demo.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import ru.nshi.demo.model.domain.Person;
 
 import java.util.List;
@@ -8,6 +8,8 @@ import java.util.List;
 /**
  * @author rassafel
  */
-public interface PersonRepository extends CrudRepository<Person, String> {
+public interface PersonRepository extends PagingAndSortingRepository<Person, String> {
     List<Person> findAll();
+
+    List<Person> findByAgeIsGreaterThan(Integer age);
 }

@@ -2,6 +2,9 @@ package ru.nshi.demo.controller.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import ru.nshi.demo.controller.PersonController;
@@ -29,8 +32,16 @@ public class PersonControllerImpl implements PersonController {
     }
 
     @Override
-    public ResponseEntity<List<Person>> getPersons() {
-        List<Person> persons = service.getPersons();
+    public ResponseEntity<Page<Person>> getPersons(Integer page, Integer size) {
+        Sort sort = Sort.by(Sort.Order.asc("age"));
+        PageRequest pageRequest = PageRequest.of(page, size, sort);
+        Page<Person> persons = service.getPersons(pageRequest);
+        return ResponseEntity.ok(persons);
+    }
+
+    @Override
+    public ResponseEntity<List<Person>> getPersonsGreaterThan(Integer age) {
+        List<Person> persons = service.getPersonsGreaterThan(age);
         return ResponseEntity.ok(persons);
     }
 
