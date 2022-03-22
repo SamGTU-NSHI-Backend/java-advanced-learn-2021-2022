@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import ru.nshi.demo.model.domain.Person;
 import ru.nshi.demo.model.dto.CreatePersonDto;
 
+import java.util.List;
+
 /**
  * @author rassafel
  */
@@ -25,6 +27,9 @@ public interface PersonController {
         @ApiResponse(responseCode = "400", description = "If in fio does not contains 3 elements")
     })
     ResponseEntity<String> createPerson(@RequestBody(required = false) CreatePersonDto dto);
+
+    @GetMapping
+    ResponseEntity<List<Person>> getPersons();
 
     @GetMapping("/{id}")
     ResponseEntity<Person> findById(@PathVariable(required = false) String id,

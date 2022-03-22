@@ -10,6 +10,7 @@ import ru.nshi.demo.model.dto.CreatePersonDto;
 import ru.nshi.demo.service.PersonService;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * @author rassafel
@@ -25,6 +26,12 @@ public class PersonControllerImpl implements PersonController {
         log.info("Received object: {}", dto);
         String person = service.createPerson(dto);
         return ResponseEntity.ok(person);
+    }
+
+    @Override
+    public ResponseEntity<List<Person>> getPersons() {
+        List<Person> persons = service.getPersons();
+        return ResponseEntity.ok(persons);
     }
 
     @Override
