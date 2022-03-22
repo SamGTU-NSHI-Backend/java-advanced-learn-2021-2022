@@ -4,6 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
 /**
@@ -12,11 +16,20 @@ import java.time.LocalDate;
 @Data
 @RequiredArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name = "person_table")
 public class Person {
+    @Id
+    @Column(name = "id", length = 8)
     private String id;
+    @Column(name = "first_name", length = 32)
     private String firstName;
+    @Column(name = "last_name", length = 32)
     private String lastName;
+    @Column(name = "middle_name", length = 32)
     private String middleName;
+    @Column(name = "age")
     private Integer age;
+    @Column(name = "birthdate")
     private LocalDate personBirthDate;
 }
