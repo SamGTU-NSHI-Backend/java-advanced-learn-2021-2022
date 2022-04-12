@@ -2,10 +2,7 @@ package ru.nshi.demo.model.domain;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
@@ -15,6 +12,7 @@ import java.time.LocalDate;
  */
 @Entity
 @Data
+@Table(name = "person_passport")
 public class Passport {
 
     @Id
