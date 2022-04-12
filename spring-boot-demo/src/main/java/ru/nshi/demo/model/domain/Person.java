@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 /**
@@ -32,4 +29,7 @@ public class Person {
     private Integer age;
     @Column(name = "birthdate")
     private LocalDate personBirthDate;
+
+    @Version
+    private Integer version;
 }
