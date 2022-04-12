@@ -28,9 +28,7 @@ public class PersonCustomRepositoryImpl implements PersonCustomRepository {
     public Iterable<Person> findByAge(Integer age) {
         TransactionTemplate transactionTemplate = new TransactionTemplate(transactionManager);
         // Custom query logic
-        transactionTemplate.execute(status -> {
-
-        });
+        transactionTemplate.execute(status -> null);
         return Collections.emptyList();
     }
 }
