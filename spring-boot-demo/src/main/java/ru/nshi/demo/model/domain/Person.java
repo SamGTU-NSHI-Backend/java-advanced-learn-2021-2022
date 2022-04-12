@@ -31,5 +31,5 @@ public class Person {
     private LocalDate personBirthDate;
 
     @Version
-    private Integer version;
+    private Integer version = 1;
 }

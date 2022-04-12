@@ -48,7 +48,7 @@ public class PersonControllerImpl implements PersonController {
     @Override
     public ResponseEntity<Person> findById(String id, String firstName) {
         if (id.matches("\\d+")) {
-            Person person = new Person(id, firstName, "SecondName", "MiddleName", 123, LocalDate.now());
+            Person person = new Person(id, firstName, "SecondName", "MiddleName", 123, LocalDate.now(), 1);
             return ResponseEntity.ok(person);
         } else {
             return ResponseEntity.badRequest().body(null);
