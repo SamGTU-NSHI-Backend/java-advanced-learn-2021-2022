@@ -26,4 +26,6 @@ public class Passport {
     @JoinColumn(name = "person_id")
     private Person person;
 
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
 }
