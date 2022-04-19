@@ -10,7 +10,7 @@ import ru.nshi.demo.event.model.PassportSpringEvent;
  */
 @Slf4j
 @Component
-public class PassportListener implements ApplicationListener<PassportSpringEvent>  {
+public class PassportListener implements ApplicationListener<PassportSpringEvent> {
     @Override
     public void onApplicationEvent(PassportSpringEvent event) {
         log.info("{}", event);
